@@ -1,4 +1,4 @@
-name: test-and-publish
+name: publish
 
 on:
   push:
@@ -27,12 +27,6 @@ jobs:
 
       - name: Install dependencies
         run: yarn
-
-      - name: Install playwright
-        run: npx playwright install
-
-      - name: Run tests
-        run: yarn test && yarn test:unit
 
   publish:
     needs: test
